@@ -3,12 +3,13 @@ import Link from 'next/link'
 
 interface ButtonProps {
   children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'whatsapp' | 'outline'
+  variant?: 'primary' | 'secondary' | 'whatsapp' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   href?: string
   onClick?: () => void
   className?: string
   type?: 'button' | 'submit' | 'reset'
+  icon?: React.ReactNode
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -19,36 +20,51 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   className = '',
   type = 'button',
+  icon,
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 hover:transform hover:scale-105 active:scale-95'
+  const baseStyles = 'group relative inline-flex items-center justify-center font-bold rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden'
   
   const variants = {
-    primary: 'bg-primary text-white hover:bg-primary-light shadow-lg hover:shadow-xl',
-    secondary: 'bg-accent text-white hover:bg-accent-light shadow-lg hover:shadow-xl',
-    whatsapp: 'bg-whatsapp text-white hover:bg-whatsapp-dark shadow-lg hover:shadow-xl',
-    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
+    primary: 'bg-gradient-to-r from-primary to-primary-light text-white shadow-xl hover:shadow-2xl',
+    secondary: 'bg-gradient-to-r from-accent to-accent-light text-white shadow-xl hover:shadow-glow-accent',
+    whatsapp: 'bg-gradient-to-r from-whatsapp to-whatsapp-dark text-white shadow-xl hover:shadow-glow-whatsapp',
+    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white hover:shadow-xl',
+    ghost: 'text-primary hover:bg-primary/5',
   }
   
   const sizes = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
+    sm: 'px-5 py-2.5 text-sm gap-2',
+    md: 'px-7 py-3.5 text-base gap-2',
+    lg: 'px-9 py-4 text-lg gap-3',
   }
   
   const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`
   
+  const content = (
+    <>
+      {/* Shimmer effect for gradient buttons */}
+      {(variant === 'primary' || variant === 'secondary' || variant === 'whatsapp') && (
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+      )}
+      
+      <span className="relative z-10 flex items-center gap-2">
+        {icon && <span className="group-hover:rotate-12 transition-transform">{icon}</span>}
+        {children}
+      </span>
+    </>
+  )
+  
   if (href) {
     return (
       <Link href={href} className={classes}>
-        {children}
+        {content}
       </Link>
     )
   }
   
   return (
     <button type={type} onClick={onClick} className={classes}>
-      {children}
+      {content}
     </button>
   )
 }
-

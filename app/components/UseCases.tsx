@@ -81,30 +81,44 @@ export const UseCases = () => {
           {useCases.map((useCase, index) => {
             const Icon = useCase.icon
             return (
-              <Card key={index} className="overflow-hidden">
-                {/* Icon Header */}
-                <div className={`w-full -mx-6 -mt-6 mb-6 p-6 bg-gradient-to-br ${useCase.color}`}>
-                  <Icon className="text-white" size={40} />
+              <div 
+                key={index} 
+                className="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100"
+              >
+                {/* Gradient accent bar on top */}
+                {/* <div className={`h-2 w-full bg-gradient-to-r ${useCase.color}`} /> */}
+                
+                {/* Card Content */}
+                <div className="p-8">
+                  {/* Icon with background */}
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${useCase.color} mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                    <Icon className="text-white" size={32} />
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-primary mb-3 group-hover:text-whatsapp transition-colors">
+                    {useCase.industry}
+                  </h3>
+
+                  <p className="text-gray-600 mb-6 leading-relaxed text-sm">
+                    {useCase.description}
+                  </p>
+
+                  {/* Benefits with better styling */}
+                  <div className="space-y-3 pt-4 border-t border-gray-100">
+                    {useCase.benefits.map((benefit, idx) => (
+                      <div key={idx} className="flex items-start gap-3 group/item">
+                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-whatsapp/10 flex items-center justify-center mt-0.5">
+                          <span className="text-whatsapp text-xs font-bold">✓</span>
+                        </div>
+                        <span className="text-sm text-gray-700 group-hover/item:text-gray-900">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-primary mb-3">
-                  {useCase.industry}
-                </h3>
-
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {useCase.description}
-                </p>
-
-                <div className="space-y-2">
-                  <p className="text-sm font-semibold text-primary mb-2">Key Benefits:</p>
-                  {useCase.benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                      <span className="text-whatsapp mt-0.5">✓</span>
-                      <span>{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-              </Card>
+                {/* Bottom gradient on hover */}
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${useCase.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
+              </div>
             )
           })}
         </div>
