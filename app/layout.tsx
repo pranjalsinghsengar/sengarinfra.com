@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Analytics from './components/Analytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://sengarinfra.com'),
 }
 
 export default function RootLayout({
@@ -35,8 +37,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Analytics />
+        {children}
+      </body>
     </html>
   )
 }
+
 
