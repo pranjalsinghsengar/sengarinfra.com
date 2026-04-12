@@ -41,12 +41,12 @@
 
   /* Gradient text */
   .gradient-text {
-    @apply bg-gradient-to-r from-whatsapp via-accent to-primary bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-brand via-accent to-primary bg-clip-text text-transparent;
   }
 
   /* Glow effects */
-  .glow-whatsapp {
-    box-shadow: 0 0 30px rgba(37, 211, 102, 0.3);
+  .glow-brand {
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
   }
 
   .glow-accent {
@@ -69,12 +69,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #25D366 0%, #7C3AED 100%);
+  background: linear-gradient(180deg, #2563eb 0%, #7C3AED 100%);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #1DA851 0%, #6D28D9 100%);
+  background: linear-gradient(180deg, #1d4ed8 0%, #6D28D9 100%);
 }
 
 /* Custom gradient backgrounds */
@@ -82,21 +82,21 @@ html {
   background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
 }
 
-.gradient-whatsapp {
-  background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+.gradient-brand {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 }
 
 .gradient-accent {
   background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
 }
 
-.gradient-radial-whatsapp {
-  background: radial-gradient(circle at center, #25D366 0%, #1DA851 70%, transparent 70%);
+.gradient-radial-brand {
+  background: radial-gradient(circle at center, #2563eb 0%, #1d4ed8 70%, transparent 70%);
 }
 
 /* Animated gradient background */
 .animated-gradient {
-  background: linear-gradient(-45deg, #25D366, #7C3AED, #0F172A, #25D366);
+  background: linear-gradient(-45deg, #2563eb, #7C3AED, #0F172A, #2563eb);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
@@ -143,20 +143,18 @@ html {
 @keyframes pulse-ring {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
   }
 }
 
 .pulse-ring {
   animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
 }
-
-

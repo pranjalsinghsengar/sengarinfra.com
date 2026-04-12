@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        whatsapp: {
-          DEFAULT: '#25D366',
-          light: '#4FE57A',
-          dark: '#1DA851',
-          50: '#E8F9EF',
-          100: '#D1F3DF',
+        brand: {
+          DEFAULT: '#2563eb', // blue-600
+          light: '#60a5fa',   // blue-400
+          dark: '#1d4ed8',    // blue-700
+          50: '#eff6ff',      // blue-50
+          100: '#dbeafe',     // blue-100
         },
         primary: {
           DEFAULT: '#0F172A',
@@ -79,8 +79,8 @@ const config: Config = {
           '100%': { backgroundPosition: '1000px 0' },
         },
         glow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(37, 211, 102, 0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(37, 211, 102, 0.6)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(37, 99, 235, 0.3)' }, // brand primary glow
+          '50%': { boxShadow: '0 0 40px rgba(37, 99, 235, 0.6)' },
         },
       },
       backgroundImage: {
@@ -89,7 +89,7 @@ const config: Config = {
         'shimmer': 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
       },
       boxShadow: {
-        'glow-whatsapp': '0 0 30px rgba(37, 211, 102, 0.3)',
+        'glow-brand': '0 0 30px rgba(37, 99, 235, 0.3)',
         'glow-accent': '0 0 30px rgba(124, 58, 237, 0.3)',
         'xl-colored': '0 20px 50px rgba(0, 0, 0, 0.15)',
       },
@@ -98,4 +98,3 @@ const config: Config = {
   plugins: [],
 }
 export default config
-

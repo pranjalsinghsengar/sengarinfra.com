@@ -1,68 +1,68 @@
 'use client'
 
 import React from 'react'
-import { MessageCircle, Cloud, Zap, BarChart, Lock, Globe, ArrowRight, Star } from 'lucide-react'
+import { MessageCircle, Cloud, Zap, BarChart, Lock, Globe, ArrowRight, Star, Database, Bot, Share2 } from 'lucide-react'
 import { Container } from './ui/Container'
 
 export const Services = () => {
   const services = [
     {
-      icon: MessageCircle,
-      title: 'WhatsApp AI Chatbot',
-      description: 'Deploy intelligent chatbots on WhatsApp to handle customer queries, take orders, and provide instant support 24/7.',
-      features: ['Natural conversations', 'Multi-language support', 'CRM integration'],
-      color: 'whatsapp',
-      gradient: 'from-whatsapp/20 via-whatsapp/10 to-transparent',
+      icon: Database,
+      title: 'Startup CRM & Pipeline',
+      description: 'A powerful, unified CRM built for high-growth startups to track leads, manage pipelines, and close deals faster.',
+      features: ['Real-time sync', 'Custom data fields', 'Smart lead scoring'],
+      color: 'brand',
+      gradient: 'from-brand/20 via-brand/10 to-transparent',
       featured: true,
-      stats: { value: '50K+', label: 'Messages/day' }
-    },
-    {
-      icon: Cloud,
-      title: 'SaaS Platform Development',
-      description: 'Custom SaaS solutions built to scale your operations and streamline your business processes.',
-      features: ['Cloud-based architecture', 'Infinitely scalable', 'Bank-grade security'],
-      color: 'accent',
-      gradient: 'from-accent/20 via-accent/10 to-transparent',
-      featured: false,
-      stats: { value: '99.9%', label: 'Uptime' }
+      stats: { value: '3x', label: 'Faster closing' }
     },
     {
       icon: Zap,
-      title: 'Business Automation',
-      description: 'Automate workflows, integrate systems, and eliminate manual tasks to boost efficiency.',
-      features: ['Workflow automation', 'API integration', 'Real-time analytics'],
+      title: 'AI Workflow Automation',
+      description: 'Streamline operations by automating repetitive tasks, from data entry to customer follow-ups using advanced AI.',
+      features: ['Drag-and-drop builder', '100+ native integrations', 'Predictive analytics'],
+      color: 'accent',
+      gradient: 'from-accent/20 via-accent/10 to-transparent',
+      featured: false,
+      stats: { value: '85%', label: 'Time saved' }
+    },
+    {
+      icon: Bot,
+      title: 'Omni-Channel AI Bots',
+      description: 'Deploy intelligent agents across WhatsApp, Website, Slack, and Email to provide 24/7 support and qualify leads instantly.',
+      features: ['Natural language processing', 'Tone training', 'Seamless CRM handoff'],
       color: 'primary',
       gradient: 'from-primary/20 via-primary/10 to-transparent',
       featured: false,
-      stats: { value: '80%', label: 'Time saved' }
+      stats: { value: '99%', label: 'Response rate' }
     },
   ]
 
   const additionalServices = [
-    { icon: BarChart, title: 'Analytics & Insights', description: 'Track performance and make data-driven decisions', color: 'whatsapp' },
-    { icon: Lock, title: 'Enterprise Security', description: 'Bank-level security and data protection', color: 'accent' },
-    { icon: Globe, title: 'Global Reach', description: 'Multi-language and multi-region support', color: 'primary' },
+    { icon: BarChart, title: 'In-Depth Analytics', description: 'Monitor pipeline health and agent performance in real-time.', color: 'brand' },
+    { icon: Lock, title: 'Enterprise-Grade Security', description: 'SOC-2 compliant infrastructure protecting your startup data.', color: 'accent' },
+    { icon: Share2, title: 'API-First Architecture', description: 'Extend the platform with robust APIs and Webhooks.', color: 'primary' },
   ]
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+    <section id="services" className="py-24 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-whatsapp/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
 
       <Container>
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-20 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-whatsapp/10 to-accent/10 px-4 py-2 rounded-full mb-6">
-            <Star className="text-whatsapp" size={16} />
-            <span className="text-sm font-semibold text-gray-700">What We Offer</span>
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand/10 to-accent/10 px-4 py-2 rounded-full mb-6">
+            <Star className="text-brand" size={16} />
+            <span className="text-sm font-semibold text-gray-700">Platform Capabilities</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-6">
-            Our <span className="bg-gradient-to-r from-whatsapp to-accent bg-clip-text text-transparent">Services</span>
+            Built for <span className="bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">Scale</span>
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Comprehensive tech solutions designed to help your business scale and succeed
+            Everything your startup needs to accelerate growth from seed to series A and beyond.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export const Services = () => {
           {services.map((service, index) => {
             const Icon = service.icon
             const colorClasses = {
-              whatsapp: { bg: 'from-whatsapp to-whatsapp-dark', text: 'text-whatsapp', border: 'border-whatsapp' },
+              brand: { bg: 'from-brand to-brand-dark', text: 'text-brand', border: 'border-brand' },
               accent: { bg: 'from-accent to-accent-light', text: 'text-accent', border: 'border-accent' },
               primary: { bg: 'from-primary to-primary-light', text: 'text-primary', border: 'border-primary' },
             }
@@ -83,7 +83,7 @@ export const Services = () => {
                 className={`
                   group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl 
                   transition-all duration-500 hover:-translate-y-2 overflow-hidden
-                  ${service.featured ? 'ring-2 ring-whatsapp/50 lg:scale-105' : 'ring-1 ring-gray-200'}
+                  ${service.featured ? 'ring-2 ring-brand/50 lg:scale-105 z-10' : 'ring-1 ring-gray-200'}
                 `}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -92,9 +92,9 @@ export const Services = () => {
 
                 {service.featured && (
                   <div className="absolute top-6 right-6 z-10">
-                    <div className="bg-gradient-to-r from-whatsapp to-whatsapp-dark text-white text-xs px-4 py-1.5 rounded-full font-bold shadow-lg flex items-center gap-1">
+                    <div className="bg-gradient-to-r from-brand to-brand-dark text-white text-xs px-4 py-1.5 rounded-full font-bold shadow-lg flex items-center gap-1">
                       <Star size={12} fill="currentColor" />
-                      <span>Most Popular</span>
+                      <span>Core Engine</span>
                     </div>
                   </div>
                 )}
@@ -154,7 +154,7 @@ export const Services = () => {
           {additionalServices.map((item, index) => {
             const Icon = item.icon
             const colorClasses = {
-              whatsapp: 'from-whatsapp/10 to-whatsapp/5',
+              brand: 'from-brand/10 to-brand/5',
               accent: 'from-accent/10 to-accent/5',
               primary: 'from-primary/10 to-primary/5',
             }
@@ -162,13 +162,13 @@ export const Services = () => {
             return (
               <div 
                 key={index} 
-                className="group flex items-start gap-4 p-6 rounded-2xl bg-white hover:bg-gradient-to-br hover:from-gray-50 hover:to-white border border-gray-200 hover:border-gray-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="group flex items-start gap-4 p-6 rounded-2xl bg-white hover:bg-gradient-to-br hover:from-gray-50 hover:to-white border border-gray-200 hover:border-blue-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colorClasses[item.color as keyof typeof colorClasses]} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-md`}>
-                  <Icon className={item.color === 'whatsapp' ? 'text-whatsapp' : item.color === 'accent' ? 'text-accent' : 'text-primary'} size={24} />
+                  <Icon className={item.color === 'brand' ? 'text-brand' : item.color === 'accent' ? 'text-accent' : 'text-primary'} size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary mb-2 group-hover:text-whatsapp transition-colors">{item.title}</h4>
+                  <h4 className="font-bold text-primary mb-2 group-hover:text-brand transition-colors">{item.title}</h4>
                   <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
                 </div>
               </div>
@@ -178,13 +178,13 @@ export const Services = () => {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center animate-fade-in-up">
-          <div className="inline-block bg-gradient-to-r from-whatsapp/5 via-accent/5 to-primary/5 rounded-3xl p-1">
+          <div className="inline-block bg-gradient-to-r from-brand/5 via-accent/5 to-primary/5 rounded-3xl p-1">
             <div className="bg-white rounded-3xl px-8 py-6">
               <p className="text-gray-700 mb-4">
-                <span className="font-bold text-primary">Not sure which service you need?</span> Let's talk about your goals.
+                <span className="font-bold text-primary">Need a custom enterprise solution?</span> Let's discuss your requirements.
               </p>
-              <button className="bg-gradient-to-r from-whatsapp to-whatsapp-dark text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:shadow-glow-whatsapp transition-all duration-300 hover:scale-105">
-                Schedule Free Consultation
+              <button className="bg-gradient-to-r from-brand to-brand-dark text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:shadow-glow-brand transition-all duration-300 hover:scale-105">
+                Contact Sales Team
               </button>
             </div>
           </div>
