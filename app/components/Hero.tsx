@@ -157,7 +157,7 @@ export const Hero = () => {
                    <p className="text-sm text-gray-500 mb-1">AI Interactions</p>
                    <p className="text-2xl font-bold text-gray-800">8,542</p>
                    <div className="mt-2 flex items-center gap-1 text-xs text-brand font-semibold">
-                      <svg className="w-3 h-3" full="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                      <svg className="w-3 h-3" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                       +22.1%
                    </div>
                 </div>
